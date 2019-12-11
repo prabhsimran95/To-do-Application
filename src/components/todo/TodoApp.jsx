@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 
 
 
@@ -6,8 +7,15 @@ class TodoApp extends Component{
     render(){
         return(
             <div className="TodoApp">
-                My Todo Application
-                <LoginComponent />
+                <Router>
+                    <>
+                    <Route path="/login" component={LoginComponent} />
+                    <Route path="/welcome" component={WelcomeComponent} />
+                    </>
+                </Router>
+                
+              {/*<LoginComponent />
+                <WelcomeComponent />*/}
             </div>
         )
     }
@@ -47,7 +55,7 @@ class LoginComponent extends Component{
 
     loginAction(){
         if(this.state.username==="prabh" && this.state.password==="abcd"){
-            console.log("login successfull")
+         this.props.history.push("/welcome")
             this.setState({
                 hasLoginFailed: false,
                 showSuccessMessage: true
@@ -79,6 +87,13 @@ class LoginComponent extends Component{
 //  to print the invalid messages in the div content we will make a new component
 //  and pass them as props
 
+class WelcomeComponent extends Component{
+    render(){
+        return(
+            <div> Welcome to the todo app</div>
+        )
+    }
+}
 
 function ShowInvalidMessages(props){
     if(props.hasLoginFailed){
