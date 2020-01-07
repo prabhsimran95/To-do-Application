@@ -8,7 +8,6 @@ class App extends Component{
     return (
       //JSX Syntax
       <div className="App">
-        {/*<Counter />*/}
         <TodoApp />
       </div>
     );
