@@ -32,12 +32,17 @@ class LoginComponent extends Component{
         this.setState({
             [event.target.name]: event.target.value // can not understand event.target.name
         })
+        console.log(event.target.value)
+        console.log(this.state.username + " test")
     }
 
     loginAction(){
         if(this.state.username==="prabh" && this.state.password==="abcd"){
             AuthenticationService.registerSuccesfulLogin(this.state.username,this.state.password);
-         this.props.history.push(`/welcome/${this.state.username}`)
+            // the below line is executed to route to a different component from current page and
+            // this.props.history.push is used to redirect from login component to the new component
+            //  and that New component is set in the TodoApp.jsx where all the routes are defined.
+            this.props.history.push(`/welcome/${this.state.username}`)
             this.setState({
                 hasLoginFailed: false,
                 showSuccessMessage: true

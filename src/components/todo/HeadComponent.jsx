@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import AuthenticationService from './AuthenticationService.js'
 import { withRouter } from 'react-router';
-import {BrowserRouter as Router,Route,Switch, Link} from 'react-router-dom'
+import {BrowserRouter as Router,Link} from 'react-router-dom'
 
 class HeadComponent extends Component{
     render(){
