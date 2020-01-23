@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import TodoDataService from '../../api/todo/TodoDataService'
 import AuthenticationService from './AuthenticationService'
 
-
 class ListTodosComponent extends Component{
     constructor(props){
         super(props)
@@ -45,10 +44,10 @@ class ListTodosComponent extends Component{
         console.log('update ' +id)
         this.props.history.push(`/todos/${id}`)
     }
-
+    
     render(){
         return(
-        <div>
+        <div >
             <h1>List Todos</h1>
             {this.state.message && <div class ="alert alert-success">{this.state.message}</div>}
             <div className="container">
@@ -88,3 +87,8 @@ class ListTodosComponent extends Component{
 }
 
 export default ListTodosComponent
+
+
+
+
+
